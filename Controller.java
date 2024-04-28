@@ -17,12 +17,16 @@ public class Controller{
 	@FXML
 	private TextField DecimalTextField;
 	
-	public void Convert(ActionEvent event) {
+	public void Convert() {
 		try {
-		int binaryNumber = Integer.parseInt(TextFiledBinary.getText());
-		if(binaryNumber != 1 || binaryNumber != 0) {
-			TextFiledBinary.setText("Please use numbers 1 or 0");
-		}
+		String binaryNumbersString = TextFiledBinary.getText();
+		int[] binaryNumbersArray = new int[binaryNumbersString.length()];
+		for(int i = 0; i < binaryNumbersString.length(); i++) {
+			binaryNumbersArray[i] = Character.getNumericValue(binaryNumbersString.charAt(i));
+			if(binaryNumbersArray[i] > 1 || binaryNumbersArray[i] < 0) {
+				TextFiledBinary.setText("Please use numbers 1 or 0");
+			}
+		}	
 		}
 		catch(NumberFormatException e) {
 			TextFiledBinary.setText("Please use numbers 1 or 0");
@@ -32,6 +36,7 @@ public class Controller{
 		}
 	}
 }
+
 		
 	
 
