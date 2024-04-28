@@ -28,7 +28,7 @@ public class Controller{
 			TextFiledBinary.setText("Please use numbers 1 or 0");
 		}
 		catch(Exception e) {
-			System.out.println("error");
+			System.out.println("error"); 
 		}
 	}
 }
